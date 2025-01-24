@@ -1,12 +1,17 @@
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import Project from "@/components/Project";
+import Skills from "@/components/Skills";
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
-      <h1>home page</h1>
+      <Project />
+      <Skills />
+      <Footer />
     </>
   );
 }
