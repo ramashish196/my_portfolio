@@ -9,7 +9,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="w-full h-24 bg-red-400 px-20">
+      <div className="w-full h-24 bg-red-400 px-14">
         <div className="flex flex-row justify-between items-center h-full">
           <h1>nav</h1>
           <div className="m-auto">
@@ -43,8 +43,11 @@ const Navbar = () => {
           <div className="p-5">
             <div className="w-full h-14 flex justify-between items-center border-b border-b-emerald-500 mb-3">
               <h1 className="text-red-800 text-2xl">rv</h1>
-              <div onClick={handleNav}>
-                <CgClose className="text-black text-3xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-2" />
+              <div
+                onClick={handleNav}
+                className="text-black text-3xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-2"
+              >
+                <CgClose />
               </div>
             </div>
             <ul className="text-red-700 pt-3 flex flex-col px-8 gap-y-6">
