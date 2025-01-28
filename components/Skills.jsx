@@ -23,7 +23,7 @@ const imageData = [
 
 const Skills = () => {
   return (
-    <div className="w-full h-full px-14">
+    <div id="skills" className="w-full h-full px-14">
       <div className="w-full h-full flex flex-col justify-center items-center mx-auto py-2">
         <p className="text-xl tracking-widest uppercase text-purple-800">
           Skills

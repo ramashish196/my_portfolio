@@ -3,11 +3,10 @@ import React from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { GrContactInfo } from "react-icons/gr";
 import { SiGmail } from "react-icons/si";
-
 const Hero = () => {
   return (
     <>
-      <div className="w-full h-screen px-14 text-center">
+      <div id="hero" className="w-full h-screen px-14 text-center">
         <div className="w-full h-full flex justify-center items-center m-auto">
           <div>
             <p className="text-base uppercase">
@@ -22,16 +21,16 @@ const Hero = () => {
               possimus dolore reprehenderit dignissimos.
             </p>
             <div className="flex justify-center items-center max-w-[330px] m-auto py-4 gap-x-10">
-              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-2 hover:scale-110 ease-in duration-300">
+              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300">
                 <FaLinkedinIn />
               </div>
-              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-2 hover:scale-110 ease-in duration-300">
+              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300">
                 <FaGithub />
               </div>
-              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-2 hover:scale-110 ease-in duration-300">
+              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300">
                 <SiGmail />
               </div>
-              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-2 hover:scale-110 ease-in duration-300">
+              <div className="text-xl cursor-pointer rounded-full shadow-lg shadow-gray-400 p-6 hover:scale-110 ease-in duration-300">
                 <GrContactInfo />
               </div>
             </div>
