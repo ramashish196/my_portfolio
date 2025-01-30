@@ -7,33 +7,35 @@ import { GrContactInfo } from "react-icons/gr";
 import { SiGmail } from "react-icons/si";
 import { CiLight } from "react-icons/ci";
 import { FaMoon } from "react-icons/fa6";
+import { useMyContext } from "@/context/myContext";
 
 const Navbar = () => {
+  const { dark, setDark } = useMyContext();
   const [nav, setNav] = useState(false);
-  const [shadow, setShadow] = useState(false);
-  const [dark, setDark] = useState(false);
+  // const [shadow, setShadow] = useState(false);
+  // const [dark, setDark] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
   const handleDark = () => {
     setDark(!dark);
   };
-  useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 90) {
-        setShadow(true);
-      } else {
-        setShadow(false);
-      }
-    };
-    window.addEventListener("scroll", handleShadow);
-  }, []);
+  // useEffect(() => {
+  //   const handleShadow = () => {
+  //     if (window.scrollY >= 90) {
+  //       setShadow(true);
+  //     } else {
+  //       setShadow(false);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleShadow);
+  // }, []);
   return (
     <>
       <div
         className={
-          shadow
-            ? "fixed w-full h-20 shadow-xl px-14 bg-zinc-300"
+          dark
+            ? "fixed w-full h-20 shadow-xl px-14 bg-[#15282B] text-gray-200"
             : "fixed w-full h-20 px-14 bg-zinc-300"
         }
       >

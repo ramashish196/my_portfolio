@@ -1,12 +1,13 @@
+"use client";
 import { createContext, useContext, useState } from "react";
 
 const MyContext = createContext();
 
 export const MyProvider = ({ children }) => {
-  const [state, setState] = useState("Hello, Context API!");
+  const [dark, setDark] = useState(true);
 
   return (
-    <MyContext.Provider value={{ state, setState }}>
+    <MyContext.Provider value={{ dark, setDark }}>
       {children}
     </MyContext.Provider>
   );

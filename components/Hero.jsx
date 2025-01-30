@@ -3,10 +3,19 @@ import React from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { GrContactInfo } from "react-icons/gr";
 import { SiGmail } from "react-icons/si";
+import { useMyContext } from "@/context/myContext";
 const Hero = () => {
+  const { dark, setDark } = useMyContext();
   return (
     <>
-      <div id="hero" className="w-full h-screen px-14 text-center">
+      <div
+        id="hero"
+        className={
+          dark
+            ? `w-full h-screen px-14 text-center bg-[#15282b] text-gray-200`
+            : "w-full h-screen px-14 text-center"
+        }
+      >
         <div className="w-full h-full flex justify-center items-center m-auto">
           <div>
             <p className="text-base uppercase">

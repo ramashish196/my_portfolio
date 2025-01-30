@@ -5,11 +5,20 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { GrContactInfo } from "react-icons/gr";
 import { SiGmail } from "react-icons/si";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
+import { useMyContext } from "@/context/myContext";
 
 const Contact = () => {
+  const { dark, setDark } = useMyContext();
   return (
     <>
-      <div id="contact" className="w-full h-full px-14 ">
+      <div
+        id="contact"
+        className={
+          dark
+            ? "w-full h-full px-14 bg-[#15282b] text-gray-200"
+            : "w-full h-full px-14 "
+        }
+      >
         <div className="w-full h-full py-2 ">
           <p className="text-2xl tracking-widest uppercase">Contact</p>
           <h2 className="py-4">Get in touch</h2>
