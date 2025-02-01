@@ -5,7 +5,7 @@ import Link from "next/link";
 const ProjectItems = ({ title, projectURL }) => {
   return (
     <>
-      <div className="relative w-full h-auto flex justify-center items-center shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff]">
+      <div className="relative w-full h-auto flex justify-center items-center shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651e5] to-[#709dff] z-10">
         <Image
           src={"/image/Docker.svg"}
           width={200}
@@ -13,7 +13,7 @@ const ProjectItems = ({ title, projectURL }) => {
           alt="/"
           className="rounded-xl group-hover:opacity-25"
         />
-        <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+        <div className="hidden group-hover:block absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover:ease-in duration-300 z-10">
           <h2 className="text-2xl text-white -tracking-wider text-center">
             {title}
           </h2>

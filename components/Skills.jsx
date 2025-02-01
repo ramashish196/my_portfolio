@@ -11,14 +11,12 @@ const Skills = () => {
       id="skills"
       className={
         dark
-          ? "w-full h-full px-14 bg-[#15282b] text-gray-200"
-          : "w-full h-full px-14"
+          ? "w-full h-full px-14 bg-[#15282b] text-gray-200 pt-6"
+          : "w-full h-full px-14 pt-6"
       }
     >
       <div className="w-full h-full flex flex-col justify-center items-center mx-auto py-2">
-        <p className="text-xl tracking-widest uppercase text-purple-800">
-          Skills
-        </p>
+        <p className="text-xl tracking-widest uppercase text-sky-800">Skills</p>
         <h2>What I can do</h2>
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {imageData.map((skill) => (

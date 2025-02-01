@@ -12,35 +12,40 @@ import { useMyContext } from "@/context/myContext";
 const Navbar = () => {
   const { dark, setDark } = useMyContext();
   const [nav, setNav] = useState(false);
-  // const [shadow, setShadow] = useState(false);
-  // const [dark, setDark] = useState(false);
+  const [shadow, setShadow] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
   const handleDark = () => {
     setDark(!dark);
   };
-  // useEffect(() => {
-  //   const handleShadow = () => {
-  //     if (window.scrollY >= 90) {
-  //       setShadow(true);
-  //     } else {
-  //       setShadow(false);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleShadow);
-  // }, []);
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
   return (
     <>
       <div
-        className={
-          dark
-            ? "fixed w-full h-20 shadow-xl px-14 bg-[#15282B] text-gray-200"
-            : "fixed w-full h-20 px-14 bg-zinc-300"
-        }
+        className={`fixed w-full h-20 px-14 z-100 ${
+          dark ? "bg-[#15282B] text-gray-200" : "bg-zinc-300"
+        } ${shadow && !dark ? "shadow-xl" : ""}`}
       >
         <div className="flex flex-row justify-between items-center h-full">
-          <h1>nav</h1>
+          {/* <h1>nav</h1> */}
+          <div className="relative w-60 h-14 overflow-hidden cursor-pointer group flex justify-center items-center">
+            <span className=" absolute transition-transform duration-500 group-hover:-translate-x-full group-hover:opacity-0 p-3 uppercase">
+              Code By
+            </span>
+            <span className="absolute translate-x-full opacity-0 transition-transform duration-500 group-hover:translate-x-0 group-hover:opacity-100 uppercase">
+              Ramashish Vishwakarma
+            </span>
+          </div>
           <div className="m-auto">
             <ul className="hidden md:flex flex-row gap-x-4">
               <Link href={"/#hero"}>
@@ -59,11 +64,11 @@ const Navbar = () => {
                 <li>About</li>
               </Link>
               <div className="flex gap-x-2 justify-center items-center hover:cursor-pointer">
-                <div className={dark ? `flex` : `hidden`}>
-                  <CiLight onClick={handleDark} />
+                <div className={dark ? `flex` : `hidden`} onClick={handleDark}>
+                  <CiLight size={20} />
                 </div>
-                <div className={dark ? `hidden` : `flex`}>
-                  <FaMoon onClick={handleDark} />
+                <div className={dark ? `hidden` : `flex`} onClick={handleDark}>
+                  <FaMoon size={20} />
                 </div>
               </div>
             </ul>
@@ -87,8 +92,11 @@ const Navbar = () => {
         <div
           className={
             nav
-              ? `fixed left-0 top-0 w-[70%] sm:w-[60%] md:w-[45
-      %] h-screen bg-[#ecf0f3] ease-in duration-500`
+              ? dark
+                ? `fixed left-0 top-0 w-[70%] sm:w-[60%] md:w-[45
+              %] h-screen bg-[#15282b] ease-in duration-500`
+                : `fixed left-0 top-0 w-[70%] sm:w-[60%] md:w-[45
+              %] h-screen bg-[#ecf0f3] ease-in duration-500`
               : `fixed left-[-100%] top-0 h-screen  bg-[#ecf0f3] ease-in duration-500`
           }
         >
@@ -143,6 +151,14 @@ const Navbar = () => {
               >
                 <li>About</li>
               </Link>
+              <div className="flex gap-x-2 items-center hover:cursor-pointer">
+                <div className={dark ? `flex` : `hidden`} onClick={handleDark}>
+                  <CiLight size={20} />
+                </div>
+                <div className={dark ? `hidden` : `flex`} onClick={handleDark}>
+                  <FaMoon size={20} />
+                </div>
+              </div>
             </ul>
           </div>
           <div className="flex justify-center items-center max-w-[330px] m-auto py-4 gap-x-10 mt-12">
